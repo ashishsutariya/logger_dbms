@@ -1,0 +1,37 @@
+package com.dbms.project1.v1.api;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import com.dbms.project1.v1.model.Student;
+import com.dbms.project1.v1.repository.StudentRepository;
+
+import java.util.List;
+import java.util.ArrayList;
+
+@RestController
+@RequestMapping("/api/v1")
+public class StudentController {
+
+    @Autowired
+    private StudentRepository studentRepository;
+
+    @GetMapping("/students")
+    public List<Student> getAllStudents() {
+        System.out.println("here=================================");
+        
+        
+//        return studentRepository.findAll();
+        
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("John", "Doe", "john.doe@example.com"));
+        students.add(new Student("Jane", "Doe", "jane.doe@example.com"));
+        students.add(new Student("Bob", "Smith", "bob.smith@example.com"));
+        students.add(new Student("Alice", "Jones", "alice.jones@example.com"));
+        
+        return students;
+        
+    }
+}

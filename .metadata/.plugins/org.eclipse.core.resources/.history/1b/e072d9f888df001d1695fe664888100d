@@ -1,0 +1,42 @@
+package com.example.student.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import java.util.Date;
+
+
+@Entity
+public class Student {
+	  	@Id
+	    @Column(name = "B#")
+	    private String bNumber;
+	    
+	    @Column(name = "first_name")
+	    private String firstName;
+	    
+	    @Column(name = "last_name")
+	    private String lastName;
+	    
+	    @Column(name = "st_level")
+	    private String level;
+	    
+	    @Column(name = "gpa")
+	    private Double gpa;
+	    
+	    @Column(name = "email")
+	    private String email;
+	    
+	    @Column(name = "bdate")
+	    @Temporal(TemporalType.DATE)
+	    private Date birthDate;
+	
+
+}

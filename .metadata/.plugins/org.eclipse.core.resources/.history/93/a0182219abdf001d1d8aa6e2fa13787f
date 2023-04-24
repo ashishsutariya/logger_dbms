@@ -1,0 +1,15 @@
+package com.dbms.project1.v1.repository;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import org.springframework.stereotype.Repository;
+
+import com.dbms.project1.v1.model.Student;
+
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Long> {
+    List<Student> findAll() throws SQLException;
+}
